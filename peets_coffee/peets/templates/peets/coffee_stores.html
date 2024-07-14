@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+test content for forms
+<form method="POST" class="text-black">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="bg-orange-600 px-2 py-1 rounded-sm">Search Store</button>
+</form>
+
+{% if stores %}
+    <h2>Available in:</h2>
+    <ul>
+        {% for store in stores %}
+            <li>{{store.name}} : {{store.location}}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <h2>Not available in any store!</h2>
+{% endif %}
+
+{% endblock %}

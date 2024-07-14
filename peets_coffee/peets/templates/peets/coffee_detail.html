@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Coffee Detail Page{% endblock  %}
+
+{% block content %}
+<h1>Coffee Details Page</h1>
+<div class="flex flex-col text-center border border-white w-80 rounded mt-6">
+    <h3 class="font-bold text-3xl">{{coffee.name}}</h3>
+    <img src="{{coffee.image.url}}" alt="coffee_pic" class="h-40 w-full rounded shadow-lg">
+    <p>{{coffee.description}}</p>
+    <div class="mt-2 mb-2">
+        <button class="bg-blue-600 py-1 px-2 rounded hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+            Order Now
+        </button>
+        <a href="http://127.0.0.1:8000/peets/">
+            <button class="bg-blue-600 py-1 px-6 rounded hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                Back
+            </button>
+        </a>
+    </div>
+</div>
+
+{% endblock  %}
+
+ 
